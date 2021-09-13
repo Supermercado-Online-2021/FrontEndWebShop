@@ -1,0 +1,21 @@
+<main>
+    <% [ "X", "Y", "Z" ].forEach( setor => { %>
+    <section class="produtos">
+        <h2>Setor <%= setor %></h2>
+        <div class="produtos--container">
+            <% for( i=0; i < 7; i++) { %>
+                <div class="produtos--card">
+                    <figure class="produtos--descricao">
+                        <img src="" alt="">
+                        <figcaption>
+                            <span></span>
+                            <span></span>
+                        </figcaption>
+                    </figure>
+                    <button>Comprar</button>
+                </div>
+            <% } %>
+        </div>
+    </section>
+    <% }) %>
+</main>

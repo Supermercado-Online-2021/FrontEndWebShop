@@ -1,0 +1,22 @@
+{
+  "name": "frontendwebshop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Supermercado-Online-2021/FrontEndWebShop.git",
+  "author": "Supermercado-Online-2021 <pi.supermercado.online.2021@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
