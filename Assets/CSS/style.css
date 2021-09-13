@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+body,
+main,
+div,
+section,
+header,
+h1,
+h2,
+input,
+ul,
+li,
+i,
+nav,
+figure,
+figcaption,
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: box-sizing;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Questrial", Arial;
+  font-size: 16px;
+}
+header {
+  background: #e63946;
+  color: white;
+}
+header ul {
+  text-decoration: none;
+}
+
+main section .produtos--container {
+  background: #e6eed6;
+  color: #bbc5aa;
+  font-size: 50vh;
+}
