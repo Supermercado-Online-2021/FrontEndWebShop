@@ -1,3 +1,5 @@
+/* Formatação das tags */
+
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 body,
 main,
@@ -26,7 +28,22 @@ a {
 body {
   font-family: "Questrial", Arial;
   font-size: 16px;
+  background: #efefef;
 }
+span {
+  font-size: 16px;
+  display: block;
+  margin: 0 0 0 90px;
+}
+
+img {
+  width: 250px;
+}
+
+/* fim da formatação das tags */
+
+/* Ajuste do header */
+
 header {
   background: #f13d4c;
   color: white;
@@ -53,6 +70,11 @@ header input {
   background: #f13d4c;
   color: white;
 }
+
+/* fim do header */
+
+/* Ajuste do input/Barra de pesquisa */
+
 input::placeholder {
   color: white;
   padding-left: 5px;
@@ -68,11 +90,39 @@ input:focus {
 .barra--pesquisa {
   border: 1px solid white;
 }
+/* Fim do ajuste no input e barra de pesquisa */
 
-main section .produtos--container {
-  background: #e6eed6;
-  color: #bbc5aa;
-  font-size: 50vh;
+/* Ajuste do container/Card */
+h2 {
+  padding: 20px 30px;
 }
-main section .produtos--card {
+.produtos {
+  background: #fff;
+  width: 1325px;
+  margin: 30px auto;
 }
+.produtos--container {
+  display: flex;
+  align-items: center;
+}
+.produtos--card {
+  margin-left: 15px;
+  width: 200px;
+}
+/* Fim do ajuste do container/Card */
+
+/* Ajuste efeitos */
+.produtos--card button {
+  width: 200px;
+  height: 40px;
+  margin: 10px 15px;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.produtos--card button:hover {
+  background: #067bf9;
+  color: #fff;
+}
+/* Fim dos efeitos */
