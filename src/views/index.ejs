@@ -1,9 +1,11 @@
 <main>
-    <% [ "X", "Y", "Z" ].forEach( setor => { %>
+    <% categories.forEach( ({ id, nome, products }) => { %>
     <section class="produtos">
-        <h2>Setor <%= setor %></h2>
+        <h2>
+            <%= nome %>
+        </h2>
         <div class="produtos--container">
-            <% for( i=0; i < 7; i++) { %>
+            <% products.data.forEach( product => { %>
                 <div class="produtos--card">
                     <figure class="produtos--descricao">
                         <img src="" alt="">
@@ -12,9 +14,15 @@
                             <span></span>
                         </figcaption>
                     </figure>
+
+                    <span><%= product.nome %></span>
+                    <span><%= new Intl.NumberFormat( 'pt-br', {
+                        style: 'currency',
+                        currency: 'BRL'
+                    }).format(product.preco) %></span>
                     <button>Comprar</button>
                 </div>
-            <% } %>
+            <% }) %>
         </div>
     </section>
     <% }) %>
