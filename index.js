@@ -6,6 +6,8 @@ const path = require('path');
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
 
+const routes = require('./src/routes');
+
 const app = express();
 
 
@@ -21,17 +23,11 @@ app.set('layout', './layouts/main');
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
-
-
-app.get( '/', ( req, res ) => {
-    return res.render( 'index', { 
-        title: 'Supermercado Online' 
-    })
-})
+app.use(routes);
 
 
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT || 8080;
 app.listen( PORT, () => {
-    console.log(`Servidor aberto na porta ${PORT}`)
+    console.log(`Servidor aberto na porta ${PORT}`);
 });
