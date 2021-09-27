@@ -1,0 +1,20 @@
+<article class="produtos-card">
+    <figure class="produtos-descricao">
+        <img src="<%= image_src %>" width="250" height="250" alt="">
+        <figcaption>
+            <span></span>
+            <span></span>
+        </figcaption>
+    </figure>
+
+    <span class="product-name">
+        <%= nome %>
+    </span>
+    <span>
+        <%= new Intl.NumberFormat( 'pt-br' , { 
+            style: 'currency' ,
+            currency: 'BRL'
+        }).format(preco) %>
+    </span>
+    <button class="buy-product">Comprar</button>
+</article>
