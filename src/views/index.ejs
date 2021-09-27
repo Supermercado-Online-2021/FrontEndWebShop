@@ -1,29 +1,40 @@
 <main>
-    <% categories.forEach( ({ id, nome, products }) => { %>
-    <section class="produtos">
-        <h2>
-            <%= nome %>
-        </h2>
-        <div class="produtos--container">
-            <% products.data.forEach( product => { %>
-                <div class="produtos--card">
-                    <figure class="produtos--descricao">
-                        <img src="" alt="">
-                        <figcaption>
-                            <span></span>
-                            <span></span>
-                        </figcaption>
-                    </figure>
-
-                    <span><%= product.nome %></span>
-                    <span><%= new Intl.NumberFormat( 'pt-br', {
-                        style: 'currency',
-                        currency: 'BRL'
-                    }).format(product.preco) %></span>
-                    <button>Comprar</button>
+    <% categories.forEach( ({ id, nome, products })=> { %>
+        <section class="produtos">
+            <h2 class="category-title">
+                <%= nome %>
+            </h2>
+            <div class="swiper" style="width: 100%;">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <% products.data.forEach( product => { %>
+                        <div class="swiper-slide">
+                            <%- include( './components/product', product ); -%>
+                        </div>
+                    <% }) %>
                 </div>
-            <% }) %>
-        </div>
-    </section>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
     <% }) %>
 </main>
+
+
+
+<script src="/public/js/eventDebounce.js"></script>
+<script src="/public/js/searchProductByName.js"></script>
+
+<script>
+    const swiper = new Swiper('.swiper', {
+        loop: true,
+        slidesPerView: 5,
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>
