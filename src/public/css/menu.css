@@ -1,0 +1,38 @@
+
+header.main-header {
+    display: flex;
+    align-items: center;
+
+    background: #f13d4c;
+    color: white;
+    height: 60px;
+}
+
+section.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+div.search-product-container {
+    display: flex;
+    width: 300px;
+    border-bottom: 1px solid white;
+    padding: 6px 12px;
+}
+
+div.search-product-container:hover {
+    cursor: pointer;
+}
+
+input.search-product {
+    flex: 1;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
