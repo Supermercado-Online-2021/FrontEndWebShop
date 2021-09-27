@@ -19,14 +19,15 @@ section.header-container {
 }
 
 
-div.search-product-container {
+form.search-product-container {
+    position: relative;
     display: flex;
     width: 300px;
     border-bottom: 1px solid white;
     padding: 6px 12px;
 }
 
-div.search-product-container:hover {
+form.search-product-container:hover {
     cursor: pointer;
 }
 
@@ -35,4 +36,43 @@ input.search-product {
     background: transparent;
     color: white;
     cursor: pointer;
+}
+
+ul.sugestion-products {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    width: 100%;
+    
+    background: white;
+    color: black;
+}
+
+ul.sugestion-products > li {
+    padding: 4px 8px;
+    border: 1px solid white;
+}
+
+ul.sugestion-products > li:hover {
+    background: #efefef;
+}
+
+ul.sugestion-products > li > span {
+    background: yellow;
+}
+
+
+
+ul.icons {
+    display: flex;
+    font-size: 20px;
+}
+
+ul.icons > li {
+    cursor: pointer;
+}
+
+ul.icons > li + li {
+    margin-left: 16px;
 }

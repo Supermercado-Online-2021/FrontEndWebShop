@@ -68,16 +68,3 @@ button.buy-product {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
-ul.icons {
-    display: flex;
-    font-size: 20px;
-}
-
-ul.icons > li {
-    cursor: pointer;
-}
-
-ul.icons > li + li {
-    margin-left: 16px;
-}
