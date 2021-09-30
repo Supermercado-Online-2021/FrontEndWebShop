@@ -68,3 +68,52 @@ button.buy-product {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
+
+
+section.product-grid {
+    display: grid;
+    grid-template-columns: repeat( 5, auto );
+    grid-gap: 10px;
+}
+
+
+
+ul.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+li.page-item {
+    background: #efefef;
+    color: black;
+    padding: 8px 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+li.page-item > a {
+    color: black;
+}
+
+li.page-item.disabled {
+    background: #efefef;
+    color: black;
+}
+
+li.page-item:first-child,
+li.page-item:last-child,
+li.page-item.active {
+    background: #067BF9;
+    color: white;
+}
+
+li.page-item  + li.page-item {
+    margin-left: 10px;
+}
+
+li.page-item > a {
+    color: white;
+}

@@ -6,6 +6,7 @@ header.main-header {
     background: #f13d4c;
     color: white;
     height: 60px;
+    padding: 0 20px;
 }
 
 section.header-container {
@@ -22,7 +23,7 @@ section.header-container {
 form.search-product-container {
     position: relative;
     display: flex;
-    width: 300px;
+    width: 350px;
     border-bottom: 1px solid white;
     padding: 6px 12px;
 }
