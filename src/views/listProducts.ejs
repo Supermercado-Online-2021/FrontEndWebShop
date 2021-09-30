@@ -1,0 +1,12 @@
+
+<main>
+    <h2 style="margin-bottom: 20px; text-align: center;"><%= title %></h2>
+
+    <section class="product-grid">
+        <% data.forEach( (product) => { %>
+            <%- include( './components/product', product ); -%>
+        <% }); %>
+    </section>
+
+    <%- include( './components/pagination', { page, count, limit, buttons: 7, baseUrl: '/products' } ); -%>
+</main>
