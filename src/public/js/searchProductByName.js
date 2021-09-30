@@ -8,8 +8,6 @@ const sugestionProducts = document.querySelector('.sugestion-products');
 
 const url_api = 'http://localhost:3000/api'
 
-
-
 const clearSegestionProducts = () => sugestionProducts.innerHTML = '';
 
 const searchProductByName = async (name) => {
@@ -38,17 +36,18 @@ const renderProductsName = ( term, products ) => {
 }
 
 const inputProductNameEvent = async (event) => {
+    clearSegestionProducts();
+    
     const { value } = event.target;
 
-    clearSegestionProducts();
-
     const data = await searchProductByName(value);
-
     if(data)
         renderProductsName(data.term.toUpperCase(), data.data);
 };
 
+
+
 inputProductName.addEventListener( 'keyup', debounceEvent(inputProductNameEvent) );
 inputProductName.addEventListener( 'click', inputProductNameEvent );
 
-inputProductName.addEventListener( 'blur', clearSegestionProducts );
+inputProductName.addEventListener( 'blur', debounceEvent(clearSegestionProducts) );
