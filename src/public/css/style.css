@@ -5,8 +5,12 @@ input::placeholder {
 
 input:focus {
     box-shadow: 0 0 0 0;
-    border: 0 none;
     outline: 0;
+}
+
+article.produtos-card {
+    position: relative;
+    cursor: pointer;
 }
 
 section.produtos {
@@ -19,6 +23,22 @@ section.produtos {
 
 section.produtos + section.produtos {
     margin-top: 32px;
+}
+
+div.favorite-product {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+
+    font-size: 28px;
+    color: #efefef;
+    transition: color 200ms;
+}
+
+
+div.favorite-product:hover,
+i.favorited {
+    color: #e93d3d;
 }
 
 h2.category-title {
@@ -41,7 +61,7 @@ article.produtos-card {
     justify-content: space-between;
 
     width: 224px;
-    height: 350px;
+    height: 380px;
 }
 
 figure.produtos-descricao {
@@ -74,46 +94,25 @@ button.buy-product {
 section.product-grid {
     display: grid;
     grid-template-columns: repeat( 5, auto );
-    grid-gap: 10px;
+
+    grid-column-gap: 10px;
+    grid-row-gap: 40px;
+    margin-top: 40px;
 }
 
 
+form.form {
+    max-width: 600px;
+    background: white;
+    margin: 80px auto;
+    padding: 40px 20px;
+}
 
-ul.pagination {
+div.input-group {
     display: flex;
-    justify-content: center;
-    margin-top: 60px;
+    flex-direction: column;
 }
 
-li.page-item {
-    background: #efefef;
-    color: black;
-    padding: 8px 8px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-li.page-item > a {
-    color: black;
-}
-
-li.page-item.disabled {
-    background: #efefef;
-    color: black;
-}
-
-li.page-item:first-child,
-li.page-item:last-child,
-li.page-item.active {
-    background: #067BF9;
-    color: white;
-}
-
-li.page-item  + li.page-item {
-    margin-left: 10px;
-}
-
-li.page-item > a {
-    color: white;
+div.input-group + div.input-group {
+    margin-top: 16px;
 }

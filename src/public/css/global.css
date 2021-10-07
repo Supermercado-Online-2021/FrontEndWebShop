@@ -20,8 +20,9 @@ body {
 }
 
 main {
-    width: 100%;
     max-width: 1200px;
+    width: 100%;
+
     margin: 80px auto;
     background: white;
     padding: 20px;
@@ -29,12 +30,26 @@ main {
     box-shadow: 4px 4px 8px #e4dcdc;
 }
 
+@media screen and (max-width: 1200px) {
+    main {
+        max-width: 1160px;
+        margin: 80px 20px;
+    }
+}
+
+
 input {
     font-family: "Questrial", Arial;
     font-size: 16px;
+    padding: 6px 12px;
+    border: 1px solid #efefef;
 }
 
 input:focus {
     box-shadow: 0 0 0 0;
     outline: 0;
+}
+
+a {
+    color: inherit;
 }

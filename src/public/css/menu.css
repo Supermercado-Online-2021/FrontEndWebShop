@@ -37,6 +37,8 @@ input.search-product {
     background: transparent;
     color: white;
     cursor: pointer;
+    border: 0;
+    padding: 0;
 }
 
 ul.sugestion-products {
@@ -51,8 +53,15 @@ ul.sugestion-products {
 }
 
 ul.sugestion-products > li {
+    display: flex;
+    align-items: center;
     padding: 4px 8px;
     border: 1px solid white;
+    font-size: 12px;
+}
+
+ul.sugestion-products > li > img {
+    margin-right: 10px; 
 }
 
 ul.sugestion-products > li:hover {
@@ -76,4 +85,39 @@ ul.icons > li {
 
 ul.icons > li + li {
     margin-left: 16px;
+}
+
+
+
+li.user {
+    position: relative;
+}
+
+li.user:hover > div.dropdown {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 200ms;
+}
+
+div.dropdown {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    color: black;
+    font-size: 16px;
+
+    opacity: 0;
+    background: white;
+
+    min-width: 300px;
+    padding: 8px 16px;
+}
+
+span.welcome-user {
+    font-size: 16px;
+    padding: 4px 8px;
 }
