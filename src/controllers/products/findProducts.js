@@ -3,20 +3,28 @@ const axios = require('../../config/axios.config');
 
 
 
-async function findProducts( req, res ) {
+async function findProducts( req, res, next ) {
     const { page, limit } = req.query;
+    const { token } = req.cookies;
 
     const {data} = await axios.get( '/products', {
+        headers: {
+            token
+        },
         params: {
-            fields: [ 'nome', 'preco', 'image_src' ],
+            fields: [ 'id', 'nome', 'preco', 'image_src' ],
             page, limit: limit || 30
         }
     });
-    
-    return res.render( 'listProducts', {
+
+    res.locals = { 
+        view:'listProducts', 
         title: 'Produtos',
+        baseUrl: '/products?',
         ...data
-    });
+    };
+
+    return next();
 }
 
 module.exports = findProducts;

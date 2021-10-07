@@ -15,7 +15,7 @@ const searchProductByName = async (name) => {
         const { data } = await axios.get( `${url_api}/products/name/${name}`, {
             params: {
                 limit: 5,
-                fields: [ 'id', 'nome' ]
+                fields: [ 'id', 'nome', 'image_src' ]
             }
         });
 
@@ -25,11 +25,16 @@ const searchProductByName = async (name) => {
 
 const renderProductsName = ( term, products ) => {
 
-    products.forEach( ({ id, nome }) => {
+    products.forEach( ({ id, nome, image_src }) => {
         const name =  nome.toUpperCase().replaceAll( term, `<span>${term}</span>` );
 
         const li = document.createElement('li');
-        li.innerHTML = `<a href="/product/${id}">${name}</a>`;
+        li.innerHTML = `
+            <img src="${image_src}" width="50" height="50" />
+            <div>
+                <a href="/product/${id}">${name}</a>
+            </div>
+        `;
 
         sugestionProducts.appendChild(li);
     });
