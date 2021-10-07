@@ -1,0 +1,38 @@
+
+<form class="form">
+    <div class="input-group">
+        <label>E-mail</label>
+        <input type="email" name="email" />
+    </div>
+    <div class="input-group">
+        <label>Senha</label>
+        <input type="password" name="senha" />
+    </div>
+
+    <button type="submit">Sign In</button>
+</form>
+
+<script type="module">
+    const form = document.querySelector('.form');
+
+    form.addEventListener( 'submit', async (event) => {
+        event.preventDefault();
+        
+        const formData = new FormData(event.target);
+        const email = formData.get('email');
+        const senha = formData.get('senha');
+
+        const result = await axios.post( 'http://localhost:3000/api/user/signin', {
+            email, senha
+        });
+
+        if( result.status === 200 ) {
+            const {token} = result.data;
+
+            localStorage.setItem('token', token );
+            document.cookie = `token=${token}`;
+
+            window.location.href = "/";
+        }
+    });
+</script>
