@@ -1,6 +1,9 @@
 
 <main>
-    <h2 style="margin-bottom: 20px; text-align: center;"><%= title %></h2>
+    <h2 style="margin: 20px;"><%= title %></h2>
+    <span style="margin: 0 0 20px 20px;">
+        <%= count %> produtos encontrados.
+    </span>
 
     <section class="product-grid">
         <% data.forEach( (product) => { %>
@@ -8,5 +11,7 @@
         <% }); %>
     </section>
 
-    <%- include( './components/pagination', { page, count, limit, buttons: 7, baseUrl: '/products' } ); -%>
+    <script src="/public/js/favoriteProduct.js"></script>
+
+    <%- include( './components/pagination', { page, count, limit, buttons: 7, baseUrl } ); -%>
 </main>

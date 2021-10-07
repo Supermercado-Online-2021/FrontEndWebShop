@@ -1,12 +1,24 @@
 <article class="produtos-card">
-    <figure class="produtos-descricao">
-        <img src="<%= image_src %>" width="250" height="250" alt="">
-        <figcaption>
-            <span></span>
-            <span></span>
-        </figcaption>
-    </figure>
+    <% let favorited = typeof(favorite) !== 'undefined' ? favorite: false;  %> 
 
+    <div class="favorite-product">
+        <i 
+            data-product_id="<%= id %>" 
+            class="fas fa-heart <%= favorited ? 'favorited': '' %>"
+        >
+        </i>
+    </div>
+
+    <a href="/products/<%= id %>">
+        <figure class="produtos-descricao">
+            <img src="<%= image_src %>" width="250" height="250" alt="">
+            <figcaption>
+                <span></span>
+                <span></span>
+            </figcaption>
+        </figure>
+    </a>
+    
     <span class="product-name">
         <%= nome %>
     </span>
@@ -16,5 +28,5 @@
             currency: 'BRL'
         }).format(preco) %>
     </span>
-    <button class="buy-product">Comprar</button>
+    <button class="buy-product">Adicionar</button>
 </article>

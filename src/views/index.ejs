@@ -2,7 +2,9 @@
     <% categories.forEach( ({ id, nome, products })=> { %>
         <section class="produtos">
             <h2 class="category-title">
-                <%= nome %>
+                <a href="/products/category/<%= id %>">
+                    <%= nome %>
+                </a>
             </h2>
             <div class="swiper" style="width: 100%;">
                 <!-- Additional required wrapper -->

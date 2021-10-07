@@ -6,20 +6,12 @@
 
 <% if(pages > 0) {%>
     <ul class="pagination">
-        <li class="page-item <%= previous %>">
-            <a 
-                class="page-link text-light py-2 px-3" 
-                href="<%=baseUrl%>?page=<%=page-1%>&limit=<%=limit%>"
-            >
-                Anterior
-            </a>
-        </li>
         <% 
             const margin = Math.floor(buttons/2);
             const intervals = {
                 'startPagination': [ 1, pages <= buttons ? pages: buttons ],
                 'middlePagination': [ page-margin, page+margin ],
-                'finalPagination': [ pages-buttons+1, pages ]
+                'finalPagination': [ pages-buttons+2, pages ]
             }
             const startPagination = page <= margin+1;
             const middlePagination = page > margin+1 && page <= pages-margin;
@@ -27,22 +19,32 @@
                 ? 'startPagination'
                 :  middlePagination 
                     ? 'middlePagination'
-                    : 'finalPagination' 
+                    : 'finalPagination';
+
+            const [ start, end ] = intervals[interval];
         %>
-        <% const [ start, end ] = intervals[interval]; %>
+        <% 
+            const nextPage = page < pages ? page+1 : pages;
+            const previusPage = page > 1 ? page-1: 1;
+        %> 
+        
+        <li class="page-item <%= previous %>">
+            <a href="<%=baseUrl%>page=<%=previusPage%>&limit=<%=limit%>">
+                Anterior
+            </a>
+        </li>
+
         <% for( let i = start; i <= end; i++ ) { %> 
-            <li class="page-item <%= i === page ? 'active': '' %>">
-                <a
-                    href="<%=baseUrl%>?page=<%=i%>&limit=<%=limit%>"
-                >
+            <% const active =  i === page ? 'active': ''; %> 
+            <li class="page-item <%= active %>">
+                <a href="<%=baseUrl%>page=<%=i%>&limit=<%=limit%>">
                     <%= i %>
                 </a>
             </li>
         <% } %>
+
         <li class="page-item <%= next %>">
-            <a 
-                href="<%=baseUrl%>?page=<%=page+1%>&limit=<%=limit%>"
-            >
+            <a href="<%=baseUrl%>page=<%=nextPage%>&limit=<%=limit%>" >
                 Próximo
             </a>
         </li>
